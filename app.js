@@ -26,6 +26,21 @@ class Enemy {
   }
 }
 
-let frog = new Enemy(50, 1, "red", "redy", "fro");
+class strongEnemy extends Enemy {
+  constructor(health, damage, color, name, familyName, age) {
+    super(health, damage, color, name, familyName);
+    this.age = age;
+  }
+  go() {
+    return this.fullName();
+  }
+}
 
+let frog = new Enemy(50, 1, "green", "gry", "fro");
+
+let dragon = new strongEnemy(10000, 999, "red", "sum", "sumy", "150 years old");
+console.log(frog);
 console.log(frog.fullName());
+
+console.log(dragon);
+console.log(dragon.go());
